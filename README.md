@@ -2,6 +2,6 @@
 
 Glen's vimrc.
 
-## Windows
+## Set-up
 
-Rename to _VIMRC and place in home.
+Place in home, and create ~/.vim/swaps

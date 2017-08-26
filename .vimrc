@@ -94,7 +94,7 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
-set directory=/home/glen/.vim/swaps
+set directory=~/.vim/swaps
 
 " Read MS-Word documents
 au BufReadPre *.doc set ro
