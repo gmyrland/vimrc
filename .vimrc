@@ -127,3 +127,13 @@ inoremap <S-Tab> <Tab>|
 
 nnoremap <space> <C-E>
 nnoremap <backspace> <C-Y>
+
+" Delete current line and append to time.txt in same dir with datestamp
+" Used to track items cleared from todo list
+function! WriteToTime()
+  :.s/^/\=strftime('%Y-%m-%d').' '/
+  let path = expand('%:p:h').'/time.txt'
+  :execute '.write! >> ' . l:path
+  :delete
+endfunction
+nnoremap <leader>d :call WriteToTime()<Cr>
