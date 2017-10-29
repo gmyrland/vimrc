@@ -114,7 +114,7 @@ set guioptions=
 set guifont=DejaVu\ Sans\ Mono\ 9
 
 " Color scheme?
-"colorscheme latex
+colorscheme industry
 
 " The Tab key is mapped to Escape. Press Shift-Tab to insert a Tab.
 " " To minimize Tab use, you can use '<', '>' and ':set autoindent
