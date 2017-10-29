@@ -10,7 +10,7 @@ if has("vms")
 else
   set backup		" keep a backup file
 endif
-set history=500		" keep 100 lines of command line history
+set history=500		" keep 500 lines of command line history
 set ruler		    " show the cursor position all the time
 set showcmd		    " display incomplete commands
 set incsearch		" do incremental searching
@@ -109,11 +109,11 @@ au BufWritePost *.pdf silent !lp -s -d pdffg "%"
 au BufWritePost *.pdf silent !until [ -e ~/PDF/% ]; do sleep 1; done
 au BufWritePost *.pdf silent !mv ~/PDF/% %:p:h
 
-" Turn of gui nonsense
+" Turn off gui nonsense
 set guioptions=
 set guifont=DejaVu\ Sans\ Mono\ 9
 
-" Color scheme?
+" Color scheme
 colorscheme industry
 
 " The Tab key is mapped to Escape. Press Shift-Tab to insert a Tab.
