@@ -143,3 +143,6 @@ nnoremap \n    0i<C-R>=strftime("%Y-%m-%d")<Return> - "<Esc>0f,l
 
 " Center on cursor horizontally
 nnoremap z<space> zszH
+
+" Delete the file on the current line
+nnoremap \rm Irm "<Esc>A"<Esc>V:!bash
