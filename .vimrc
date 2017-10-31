@@ -137,3 +137,9 @@ function! WriteToTime()
   :delete
 endfunction
 nnoremap <leader>d :call WriteToTime()<Cr>
+
+" Prepend a timestamp on a line
+nnoremap \n    0i<C-R>=strftime("%Y-%m-%d")<Return> - "<Esc>0f,l
+
+" Center on cursor horizontally
+nnoremap z<space> zszH
