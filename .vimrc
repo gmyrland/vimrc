@@ -128,15 +128,16 @@ inoremap <S-Tab> <Tab>|
 nnoremap <space> <C-E>
 nnoremap <backspace> <C-Y>
 
-" Delete current line and append to time.txt in same dir with datestamp
-" Used to track items cleared from todo list
-function! WriteToTime()
+" Delete current line and append to <file> in same dir with datestamp
+" Example use is to track items cleared from todo list to a completed list
+function! WriteToTime(file)
   :.s/^/\=strftime('%Y-%m-%d').' '/
-  let path = expand('%:p:h').'/time.txt'
+  let path = expand('%:p:h').'/'.a:file
   :execute '.write! >> ' . l:path
   :delete
 endfunction
-nnoremap <leader>d :call WriteToTime()<Cr>
+nnoremap <leader>d :call WriteToTime("time.txt")<Cr>
+nnoremap <leader>f :call WriteToTime("follow-up.txt")<Cr>
 
 " Prepend a timestamp on a line
 nnoremap \n    0i<C-R>=strftime("%Y-%m-%d")<Return> - "<Esc>0f,l
